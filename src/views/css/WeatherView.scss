@@ -42,9 +42,18 @@
 
   .forcastedDataSec{
     display: flex;
+    @media (min-width : 1201px) {
+      display: block !important;
+     }
   }
 
   .forcastedWeatherDash {
+    padding: 0.688rem 2.781rem;
+    margin: 2px;
+    width:100%;
+    border: $appBorder;
+    background: $weatherContainerBackground;
+
     @media   (min-width : 768px) and (max-width : 1200px)  {
       width:49% !important;
     }
@@ -53,20 +62,6 @@
     }
   }
 
-  .forcastedDataSec{
-   @media (min-width : 1201px) {
-     display: block !important;
-    }
- }
-
-
-.forcastedWeatherDash{
-  padding: 0.688rem 2.781rem;
-  margin: 2px;
-  width:100%;
-  border: $appBorder;
-  background: $weatherContainerBackground;
-}
 
 /****************Weather Cities BreadCrumb***************/
 

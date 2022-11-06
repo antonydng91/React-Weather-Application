@@ -81,13 +81,17 @@
     cursor: pointer;
   }
 
-  .weatherCityWidget:hover {
-    background-color: #cfd8e1;
+ 
+  .weatherCityWidget{
+
+    &:hover {
+      background-color: #cfd8e1;
+    }
+    &:active {
+      color: rgb(142, 142, 204);
+    }
   }
 
-  .weatherCityWidget:active {
-    color: rgb(142, 142, 204);
-  }
 
   .highligtedCityBredCrumb{
     color: #53a7cf;

@@ -44,20 +44,21 @@
     display: flex;
   }
 
-  @media   (min-width : 768px) and (max-width : 1200px)  {
   .forcastedWeatherDash {
-    width:49% !important;
+    @media   (min-width : 768px) and (max-width : 1200px)  {
+      width:49% !important;
+    }
+    @media (min-width : 1201px) {
+      width:24.4% !important;
+    }
   }
-  
- }
- @media (min-width : 1201px) {
-  .forcastedWeatherDash {
-    width:24.4% !important;
-  }
+
   .forcastedDataSec{
-    display: block !important;
-  }
+   @media (min-width : 1201px) {
+     display: block !important;
+    }
  }
+
 
 .forcastedWeatherDash{
   padding: 0.688rem 2.781rem;

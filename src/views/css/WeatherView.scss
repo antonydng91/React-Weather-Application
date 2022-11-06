@@ -53,7 +53,6 @@
     width:100%;
     border: $appBorder;
     background: $weatherContainerBackground;
-
     @media   (min-width : 768px) and (max-width : 1200px)  {
       width:49% !important;
     }
@@ -77,7 +76,6 @@
     cursor: pointer;
   }
 
- 
   .weatherCityWidget{
     &:hover {
       background-color: #cfd8e1;
@@ -87,13 +85,11 @@
     }
   }
 
-
   .highligtedCityBredCrumb{
     color: #53a7cf;
     font-weight: 700;
   }
 
-  
   /**********Weather Icons *****************/
 
   .weatherIconBasic{

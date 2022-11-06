@@ -1,0 +1,52 @@
+
+
+$appBorder: 1px solid #d9e6ea;
+$viewPortBackground:#fff;
+$weatherContainerBackground:#d9e6ea;
+
+*{
+  box-sizing: border-box;
+}
+body{
+ font-family: serif;
+}
+
+.weatherWidgetMain{
+  height:100vh;
+  background-color: $weatherContainerBackground;
+  overflow-y: auto;
+  
+}
+/************Fonts Classes*******************/
+
+  @mixin font-weight($weight) {
+    font-weight: $weight;
+  }
+
+  @mixin font-size($size) {
+    font-size: $size;
+  }
+
+  .fontWeight600{
+    @include font-weight(600);
+  }
+  .fontWeight400{
+    @include font-weight(400);
+  }
+  .fontSize40{
+    @include font-size(40px);
+  }
+  .fontSize30{
+    @include font-size(30px);
+  }
+  
+
+/************Margin Classes******************/
+
+  .lsm1{
+    margin-left: 1rem
+    }
+
+    .tsm1{
+    margin-top: 1rem
+    }

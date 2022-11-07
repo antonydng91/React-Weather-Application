@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "../css/WeatherView.scss"
 import { IconMapper } from "../js/WeatherIconMapper";
 import { Constants } from "../../assets/js/WeatherConstants";
+import { Utilities } from "../../assets/js/Utills";
 
 class WeatherWidget extends Component {
 
@@ -51,9 +52,8 @@ class WeatherWidget extends Component {
          referncetimeUTC=weatherData.list[0].dt_txt,
          forcastWeather=this.getTheWeatherForcast(referncetimeUTC,weatherData), //gets the forcasted weather 
          finalWeatherData={todaysWeather:todaysWeather,forcastedWeatherCont:forcastWeather};
-        this.setState((prevState) => ({ 
-            requiredWeatherData: {...prevState.requiredWeatherData,...finalWeatherData,city:weatherData.city.name}
-         }))
+       
+         this.setState({requiredWeatherData:{...Utilities.deepCopy(finalWeatherData),city:weatherData.city.name}}) 
     }
  }
  

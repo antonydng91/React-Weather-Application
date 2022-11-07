@@ -63,8 +63,7 @@
 
 
 /****************Weather Cities BreadCrumb***************/
-
-  .weatherCityWidgetCont{
+.weatherCityWidgetCont{
       display: flex;
       margin:0 auto;
       width: 60%;
@@ -72,16 +71,18 @@
   }
 
   .weatherCityWidget{
-    padding:20px;
+    padding:15px;
     cursor: pointer;
-  }
-
-  .weatherCityWidget{
+   
     &:hover {
       background-color: #cfd8e1;
     }
     &:active {
       color: rgb(142, 142, 204);
+    }
+
+    @media   (min-width : 1200px)  {
+      padding:20px !important;
     }
   }
 

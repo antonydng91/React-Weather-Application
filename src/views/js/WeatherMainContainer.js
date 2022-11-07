@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../css/WeatherView.scss"
 import { WeatherApi } from "../../apis/js/WeatherApi";
+import { Utilities } from "../../assets/js/Utills";
 import WeatherWidget from "./WeatherWidget";
 import WeatherCityBreadCrumb from "./WeatherCityBreadCrumb";
 import { Constants } from "../../assets/js/WeatherConstants";
@@ -15,10 +16,9 @@ class WeatherMainContainer extends Component {
   }
 
   afterGettingWeatherData=(data)=>{
-    this.setState((prevState) => ({ 
-      weatherData: {...prevState.weatherData,...data}
-   }))
+    this.setState({weatherData:Utilities.deepCopy(data)}) 
   }
+
 
   getWeatherServiceData = (location) => {
     WeatherApi.getCurrentWeather(location,this.afterGettingWeatherData);

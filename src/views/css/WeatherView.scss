@@ -46,15 +46,14 @@
     flex-wrap: wrap;
   }
 
-  .forcastedDataSec{
+.forcastedDataSec{
     display: flex;
-    @media (max-width : 768px) {
-      justify-content: center;
-     }
+    justify-content: center;
     @media (min-width : 1201px) {
       display: block !important;
      }
   }
+
 
   .forcastedWeatherDash {
     padding: 0.688rem 2.781rem;

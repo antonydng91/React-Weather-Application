@@ -5,19 +5,21 @@
 
  /********** Weather Main Container****************/
 
-  .weatherCard {
+ .weatherCard {
     border-radius: 0.313rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-    width: 60%;
+    width: 100%;
+    padding:0.25rem;
     margin: 0 auto;
     background-color: $viewPortBackground;
     border:$appBorder;
     margin-bottom: 0.625rem;
-    padding-right: 3px;
-    @media (min-device-width : 1201px) {
-      padding-right: 0px;
-     }
-}
+    @media (min-width : 769px) {
+      width: 60%;
+      padding:0rem;
+    }
+    
+ }
 
   .currentWeatherContainer {
     padding: 1.25rem;
@@ -46,6 +48,9 @@
 
   .forcastedDataSec{
     display: flex;
+    @media (max-width : 768px) {
+      justify-content: center;
+     }
     @media (min-width : 1201px) {
       display: block !important;
      }
@@ -57,6 +62,7 @@
     width:100%;
     border: $appBorder;
     background: $weatherContainerBackground;
+
     @media   (min-width : 768px) and (max-width : 1200px)  {
       width:49% !important;
     }
@@ -67,7 +73,8 @@
 
 
 /****************Weather Cities BreadCrumb***************/
-.weatherCityWidgetCont{
+
+  .weatherCityWidgetCont{
       display: flex;
       margin:0 auto;
       width: 60%;
@@ -77,24 +84,24 @@
   .weatherCityWidget{
     padding:15px;
     cursor: pointer;
-   
     &:hover {
       background-color: #cfd8e1;
     }
     &:active {
       color: rgb(142, 142, 204);
     }
-
     @media   (min-width : 1200px)  {
       padding:20px !important;
     }
   }
+ 
 
   .highligtedCityBredCrumb{
     color: #53a7cf;
     font-weight: 700;
   }
 
+  
   /**********Weather Icons *****************/
 
   .weatherIconBasic{

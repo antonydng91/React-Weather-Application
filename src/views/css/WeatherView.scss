@@ -5,15 +5,19 @@
 
  /********** Weather Main Container****************/
 
- .weatherCard {
-  border-radius: 0.313rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-  width: 60%;
-  margin: 0 auto;
-  background-color: $viewPortBackground;
-  border:$appBorder;
-  margin-bottom: 0.625rem;
- }
+  .weatherCard {
+    border-radius: 0.313rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    width: 60%;
+    margin: 0 auto;
+    background-color: $viewPortBackground;
+    border:$appBorder;
+    margin-bottom: 0.625rem;
+    padding-right: 3px;
+    @media (min-device-width : 1201px) {
+      padding-right: 0px;
+     }
+}
 
   .currentWeatherContainer {
     padding: 1.25rem;

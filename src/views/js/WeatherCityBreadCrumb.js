@@ -1,49 +1,41 @@
-import React, { Component } from "react";
+import React, { useState,useEffect } from "react";
 import "../css/WeatherView.scss";
 import { Constants } from "../../assets/js/WeatherConstants";
 
-class WeatherCityBreadCrumb extends Component {
-  constructor(props) {
-  super(props);
-   this.state = {
-     highligtedCityBredCrumb:Constants.cities[0],
-     intervalId:null
-   };
+export default function WeatherCityBreadCrumb(props) {
+
+  const [highligtedCityTab,setHighligtedCityTab]= useState(Constants.cities[0]);
+
+
+  const getTheWeatherData = (location) => {
+    props.callWeatherServices(location);
+    setHighligtedCityTab(location)
   }
 
-  getTheWeatherData = (location) => {
-    this.props.callWeatherServices(location);
-    this.setState({highligtedCityBredCrumb:location})
-  }
 
-  setWeatherDataCall=()=>{
+  useEffect(()=>{
+     getTheWeatherData(highligtedCityTab);
     const intervalId=setInterval(()=>{
-     this.getTheWeatherData(this.state.highligtedCityBredCrumb);
-    },Constants.weatherDataInterval*60000)
-    this.setState({ intervalId:intervalId })
-  }
+      getTheWeatherData(highligtedCityTab);
+     },Constants.weatherDataInterval*60000)
 
-  componentWillUnmount(){
-    clearInterval(this.state.intervalId)
-  }
+    return ()=>{
+      clearInterval(intervalId)
+    }
+  },[])
   
-  componentDidMount(){
-    this.setWeatherDataCall();
-  }
 
-  render() {
-    let highlightedCity=this.state.highligtedCityBredCrumb;
-    let self=this;
+
      return (
-        <React.Fragment> 
-         <div className="weatherCityWidgetCont">
+        <> 
+         <section className="weather_widget_tab_container">
              {Constants.cities && Constants.cities.map(function (city,index) {
-                  return (<div key={index}> <div className={`weatherCityWidget ${highlightedCity==city? "highligtedCityBredCrumb":""}`}  onClick={(e)=>{self.getTheWeatherData(e.target.textContent)}}>{city}</div></div>)
+                  return (<button key={index}  className={`weather_widget_tab ${highligtedCityTab===city ? "highlighted_city_tab":""}`}  onClick={(e)=>{getTheWeatherData(e.target.textContent)}}>{city}</button>)
               })}
        
-        </div>
-      </React.Fragment>
+        </section>
+      </>
     )
-  }
+  
 }
-export default WeatherCityBreadCrumb;
+

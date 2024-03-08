@@ -1,42 +1,31 @@
-import React, { Component } from "react";
-import "../css/WeatherView.scss"
+import React, { useState} from "react";
 import { WeatherApi } from "../../apis/js/WeatherApi";
 import { Utilities } from "../../assets/js/Utills";
 import WeatherWidget from "./WeatherWidget";
 import WeatherCityBreadCrumb from "./WeatherCityBreadCrumb";
-import { Constants } from "../../assets/js/WeatherConstants";
+import "../css/WeatherView.scss";
 
-class WeatherMainContainer extends Component {
+export default function WeatherMainContainer() {
 
- constructor(props) {
-  super(props);
-  this.state = {
-     weatherData:{}
-   };
+  const [weatherData,setWeatherData]=useState({})
+
+
+  const afterGettingWeatherData=(data)=>{
+    setWeatherData(Utilities.deepCopy(data));
   }
 
-  afterGettingWeatherData=(data)=>{
-    this.setState({weatherData:Utilities.deepCopy(data)}) 
-  }
-
-
-  getWeatherServiceData = (location) => {
-    WeatherApi.getCurrentWeather(location,this.afterGettingWeatherData);
+ const getWeatherServiceData = (location) => {
+    WeatherApi.getCurrentWeather(location,afterGettingWeatherData);
  }
 
-  componentDidMount() {
-    WeatherApi.getCurrentWeather(Constants.cities[0],this.afterGettingWeatherData);
-   }
- 
-  render() {
-    return (
-        <React.Fragment> 
-          <div className="weatherWidgetMain">
-             <WeatherCityBreadCrumb callWeatherServices={this.getWeatherServiceData}></WeatherCityBreadCrumb>
-             {(Object.keys(this.state.weatherData).length>0) && <WeatherWidget weatherDatas={this.state.weatherData}></WeatherWidget>} 
+   return (
+        <> 
+          <div className="weather_widget_main">
+             <WeatherCityBreadCrumb callWeatherServices={getWeatherServiceData}></WeatherCityBreadCrumb>
+             {(Object.keys(weatherData).length>0) && <WeatherWidget weatherDatas={weatherData}></WeatherWidget>} 
            </div>
-      </React.Fragment>
+      </>
     )
-  }
+  
 }
-export default WeatherMainContainer;
+

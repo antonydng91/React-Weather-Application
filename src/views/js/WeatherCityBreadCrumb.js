@@ -9,7 +9,9 @@ export default function WeatherCityBreadCrumb(props) {
 
   const getTheWeatherData = (location) => {
     props.callWeatherServices(location);
-    setHighligtedCityTab(location)
+   
+    setHighligtedCityTab(location);
+  
   }
 
 
@@ -23,6 +25,10 @@ export default function WeatherCityBreadCrumb(props) {
       clearInterval(intervalId)
     }
   },[])
+
+  const loadImageGallery=()=>{
+    props.showImageGallery(true);
+ }
   
 
 
@@ -32,6 +38,7 @@ export default function WeatherCityBreadCrumb(props) {
              {Constants.cities && Constants.cities.map(function (city,index) {
                   return (<button key={index}  className={`weather_widget_tab ${highligtedCityTab===city ? "highlighted_city_tab":""}`}  onClick={(e)=>{getTheWeatherData(e.target.textContent)}}>{city}</button>)
               })}
+              <button  className="weather_widget_tab" onClick={loadImageGallery} >Weather Image Gallery</button>
        
         </section>
       </>

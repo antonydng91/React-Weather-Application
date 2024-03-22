@@ -42,8 +42,10 @@ export default function  WeatherGallery(){
     return (<>
          <h1>Image is Lazy Loaded here</h1>
           <div className="grid-container">
-            {loadUrls && loadUrls.map((imageUrl,index)=>{
-              return <div ><img key={index} loading="lazy" src={imageUrl}></img></div>
+            {loadUrls && loadUrls.map((obj)=>{
+                let key=Object.keys(obj)[0];
+
+              return <img key={key} loading="lazy" alt="" src={obj[key]}></img>
             })}
             <div ref={interSecRef}></div>
            </div></>

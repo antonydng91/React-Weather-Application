@@ -26,10 +26,7 @@ export default function WeatherCityBreadCrumb(props) {
     }
   },[])
 
-  const loadImageGallery=()=>{
-    props.showImageGallery(true);
- }
-  
+
 
 
      return (
@@ -38,9 +35,7 @@ export default function WeatherCityBreadCrumb(props) {
              {Constants.cities && Constants.cities.map(function (city,index) {
                   return (<button key={index}  className={`weather_widget_tab ${highligtedCityTab===city ? "highlighted_city_tab":""}`}  onClick={(e)=>{getTheWeatherData(e.target.textContent)}}>{city}</button>)
               })}
-              <button  className="weather_widget_tab" onClick={loadImageGallery} >Weather Image Gallery</button>
-       
-        </section>
+          </section>
       </>
     )
   

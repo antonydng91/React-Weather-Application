@@ -5,6 +5,11 @@
 
  /********** Weather Main Container****************/
 
+ a{
+  color:black;
+}
+
+
  button{
   margin: 0;
   background: none;
@@ -106,10 +111,7 @@
       display: block !important;
      }
   }
-  
-
-
-
+ 
 /****************Weather Cities BreadCrumb***************/
 
   .weather_widget_tab_container{
@@ -127,6 +129,7 @@
     padding:15px;
     cursor: pointer;
     flex-grow:1;
+    text-decoration: none;
     &:hover {
       background-color: #cfd8e1;
     }

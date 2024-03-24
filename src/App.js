@@ -3,6 +3,10 @@ import './App.css';
 import WeatherGallery from './views/js/WeatherGallery';
 import WeatherMainContainer from "./views/js/WeatherMainContainer";
 import LinkForNav from './views/js/LinkNav';
+
+import {Provider} from 'react-redux';
+import store from './store/store';
+
 import {
   createBrowserRouter,
   RouterProvider,
@@ -36,7 +40,8 @@ export default function App() {
       return (
         <div className="App">
             <div className="weather_widget_main">
-              <RouterProvider router={router} /></div>
+              <Provider store={store}>   <RouterProvider router={router} /></Provider></div>
+           
        </div>
       );
     

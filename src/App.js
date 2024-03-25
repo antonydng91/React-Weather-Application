@@ -1,6 +1,7 @@
 import React from "react";
 import './App.css';
 import WeatherGallery from './views/js/WeatherGallery';
+import ImageAddRequest from './views/js/ImageAddRequest';
 import WeatherMainContainer from "./views/js/WeatherMainContainer";
 import LinkForNav from './views/js/LinkNav';
 
@@ -30,6 +31,11 @@ export default function App() {
         {
           path: "weatherGallery",
           element: <WeatherGallery />,
+  
+        },
+        {
+          path: "addToList",
+          element: <ImageAddRequest />,
   
         },
       ],

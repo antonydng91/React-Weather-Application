@@ -1,33 +1,25 @@
 import {createStore} from 'redux';
 
-const counterReduce=(state={counter:0,showCounter:true},action)=>{
+const imageReducer=(state={imageName:"",imageUrl:"",imageDescription:""},action)=>{
 
-    if(action.type=="increment"){
+    switch (action.type){
+    
+    case "addImage":
 
       return {
         ...state,
-        counter: state.counter + 1,
+        ...action.payload
 
       };
-    }
-    if(action.type=="decrement"){
-        return {
-            ...state,
-            counter: state.counter + 1,
-          };
-      }
 
-      if(action.type=="toggle"){
-        return {
-            ...state,
-            showCounter:!state.showCounter
-          };
-      }
+      default:
+    
 
       return state;
+    }
 
-}
+  }
 
-const store=createStore(counterReduce);
+const store=createStore(imageReducer);
 
 export default store;

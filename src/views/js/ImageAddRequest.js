@@ -5,7 +5,6 @@ import {useParams} from 'react-router-dom';
 export default function ImageAdditionRequest(){
 
     const dispatch = useDispatch();
-    const praams=useParams();
 
     const onFormSubmit=(e)=>{
         const formData= new FormData(e);

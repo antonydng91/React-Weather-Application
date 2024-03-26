@@ -20,7 +20,7 @@ export default function App() {
             <Provider store={store}>  
                <BrowserRouter >
              <section className="weather_widget_tab_container" style={{width:'100%'}}>
-                  <NavLink to="/" className="weather_widget_tab"  activeClassName="highlighted_city_tab">Weather Data</NavLink>
+                  <NavLink to="/" exact className="weather_widget_tab"  activeClassName="highlighted_city_tab">Weather Data</NavLink>
                   <NavLink to="/weatherGallery" className="weather_widget_tab" activeClassName="highlighted_city_tab">Weather Gallery</NavLink>
                   <NavLink to="/addToList" className="weather_widget_tab" activeClassName="highlighted_city_tab">Add Image</NavLink>
               </section>

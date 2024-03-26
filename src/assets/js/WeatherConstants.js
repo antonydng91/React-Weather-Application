@@ -1,4 +1,6 @@
 
+
+
   export const Constants = {
     cities:["OTTAWA","MOSCOW","TOKYO"],
     weekday : ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],

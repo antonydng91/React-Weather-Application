@@ -1,5 +1,5 @@
 import React, { useState} from "react";
-import { WeatherApi } from "../../apis/js/WeatherApi";
+import { WeatherApi } from "../../utills/WeatherApi";
 import { Utilities } from "../../assets/js/Utills";
 import WeatherWidget from "./WeatherWidget";
 import WeatherCityBreadCrumb from "./WeatherCityBreadCrumb";

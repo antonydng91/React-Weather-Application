@@ -4,7 +4,7 @@ import {imageUrls} from '../../assets/js/WeatherConstants';
 
 export default function  WeatherGallery(){
 
-    const [imageCount,setImageCount]=useState(3);
+    const [imageCount,setImageCount]=useState(3); //loading 3 images at a time
     const [loadUrls,setLoadedUrls]=useState([]);
     const interSecRef=useRef();
     
@@ -44,8 +44,7 @@ export default function  WeatherGallery(){
           <div className="grid-container">
             {loadUrls && loadUrls.map((obj)=>{
                 let key=Object.keys(obj)[0];
-
-              return <img key={key} loading="lazy" alt="" src={obj[key]}></img>
+             return <img key={key} loading="lazy" alt="" src={obj[key]}></img>
             })}
             <div ref={interSecRef}></div>
            </div></>

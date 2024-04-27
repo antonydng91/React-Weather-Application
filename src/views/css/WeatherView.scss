@@ -160,55 +160,55 @@
   }
 
   .sunnyDay{
-    background-image: url(../images/sunnyDay.png);
+    background-image: url(../../assets/images/sunnyDay.png);
     @extend .weatherIconBasic;
   }
   .fewClouds{
-    background-image: url(../images/fewClouds.png);
+    background-image: url(../../assets/images/fewClouds.png);
     @extend .weatherIconBasic;
   }
   .scatterdClouds{
-    background-image: url(../images/scatterdClouds.png);
+    background-image: url(../../assets/images/scatterdClouds.png);
     @extend .weatherIconBasic;
   }
 
   .brokenClouds{
-    background-image: url(../images/brokenClouds.png);
+    background-image: url(../../assets/images/brokenClouds.png);
     @extend .weatherIconBasic;
   }
   .showerRain{
-    background-image: url(../images/showerRain.png);
+    background-image: url(../../assets/images/showerRain.png);
     @extend .weatherIconBasic;
   }
   .rainyDay{
-    background-image: url(../images/rainyDay.png);
+    background-image: url(../../assets/images/rainyDay.png);
     @extend .weatherIconBasic;
   }
 
   .thunderStorm{
-    background-image: url(../images/thunderStorm.png);
+    background-image: url(../../assets/images/thunderStorm.png);
     @extend .weatherIconBasic;
   }
   .snow{
-    background-image: url(../images/snow.png);
+    background-image: url(../../assets/images/snow.png);
     @extend .weatherIconBasic;
   }
   .mist{
-    background-image: url(../images/mist.png);
+    background-image: url(../../assets/images/mist.png);
     background-repeat: no-repeat;
     padding: 3rem;
   }
   .clearNight{
-    background-image: url(../images/clearNight.png);
+    background-image: url(../../assets/images/clearNight.png);
     @extend .weatherIconBasic;
   }
   .fewCloudsNight{
-    background-image: url(../images/fewCloudsNight.png);
+    background-image: url(../../assets/images/fewCloudsNight.png);
     @extend .weatherIconBasic;
   }
 
   .rainyNight{
-    background-image: url(../images/rainyNight.png);
+    background-image: url(../../assets/images/rainyNight.png);
     @extend .weatherIconBasic;
   }
 

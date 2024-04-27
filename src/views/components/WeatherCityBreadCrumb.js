@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from "react";
-import "../css/WeatherView.scss";
 import { Constants } from "../../assets/js/WeatherConstants";
+import "../css/WeatherView.scss";
 
 export default function WeatherCityBreadCrumb(props) {
 
@@ -9,9 +9,7 @@ export default function WeatherCityBreadCrumb(props) {
 
   const getTheWeatherData = (location) => {
     props.callWeatherServices(location);
-   
     setHighligtedCityTab(location);
-  
   }
 
 
@@ -25,9 +23,6 @@ export default function WeatherCityBreadCrumb(props) {
       clearInterval(intervalId)
     }
   },[])
-
-
-
 
      return (
         <> 

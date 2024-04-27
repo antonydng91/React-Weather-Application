@@ -1,8 +1,7 @@
 import React from "react";
 import './App.css';
-import WeatherGallery from './views/js/WeatherGallery';
-import ImageAddRequest from './views/js/ImageAddRequest';
-import WeatherMainContainer from "./views/js/WeatherMainContainer";
+import WeatherGallery from './views/components/WeatherGallery';
+import WeatherMainContainer from "./views/components/WeatherMainContainer";
 
 import {Provider} from 'react-redux';
 import store from './store/store';
@@ -22,14 +21,10 @@ export default function App() {
              <section className="weather_widget_tab_container" style={{width:'100%'}}>
                   <NavLink to="/" exact className="weather_widget_tab"  activeClassName="highlighted_city_tab">Weather Data</NavLink>
                   <NavLink to="/weatherGallery" className="weather_widget_tab" activeClassName="highlighted_city_tab">Weather Gallery</NavLink>
-                  <NavLink to="/addToList" className="weather_widget_tab" activeClassName="highlighted_city_tab">Add Image</NavLink>
               </section>
                 <Switch>
                 <Route path="/WeatherGallery">
                   <WeatherGallery />
-                </Route>
-                <Route path="/addToList">
-                  <ImageAddRequest />
                 </Route>
                 <Route path="/" >
                   <WeatherMainContainer />

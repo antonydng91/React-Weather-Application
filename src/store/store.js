@@ -23,3 +23,4 @@ const imageReducer=(state={imageName:"",imageUrl:"",imageDescription:""},action)
 const store=createStore(imageReducer);
 
 export default store;
+

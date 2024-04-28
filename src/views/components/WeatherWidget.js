@@ -1,8 +1,7 @@
 import React, { useState,useEffect } from "react";
 
 import { IconMapper } from "../../utills/WeatherIconMapper";
-import { Constants } from "../../assets/js/WeatherConstants";
-import { Utilities } from "../../assets/js/Utills";
+import { Utilities,Constants } from "../../assets/js/Utills";
 import "../css/WeatherView.scss";
 
 

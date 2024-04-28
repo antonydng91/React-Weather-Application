@@ -1,5 +1,5 @@
 import {useEffect,useState,useRef} from 'react';
-import {imageUrls} from '../../assets/js/WeatherConstants';
+import {imageUrls} from '../../assets/js/Utills';
 
 
 export default function  WeatherGallery(){

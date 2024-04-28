@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from "react";
-import { Constants } from "../../assets/js/WeatherConstants";
+import { Constants } from "../../assets/js/Utills";
 import "../css/WeatherView.scss";
 
 export default function WeatherCityBreadCrumb(props) {

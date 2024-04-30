@@ -21,8 +21,7 @@ export default function WeatherMainContainer() {
 
    return (
         <> 
-        
-             <WeatherCityBreadCrumb  callWeatherServices={getWeatherServiceData}></WeatherCityBreadCrumb>
+           <WeatherCityBreadCrumb  callWeatherServices={getWeatherServiceData}></WeatherCityBreadCrumb>
             { (Object.keys(weatherData).length>0) && <WeatherWidget weatherDatas={weatherData}></WeatherWidget>} 
        
       </>

@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState,useEffect, useCallback } from "react";
 
 import { IconMapper } from "../../utills/WeatherIconMapper";
 import { Utilities,Constants } from "../../assets/js/Utills";
@@ -7,14 +7,24 @@ import "../css/WeatherView.scss";
 
 export default function WeatherWidget(props)  {
 
-  const [requiredWeatherData,setrequiredWeatherData]=useState({todaysWeather:{},forcastedWeatherCont:[],city:""})
+  const [requiredWeatherData,setrequiredWeatherData]=useState({todaysWeather:{},forcastedWeatherCont:[],city:""});
+
+  const extractRequiredWeather= useCallback( (weatherData)=>{
+    if(Object.keys(weatherData).length>0){ // iterating the weather date to get the current and forcasted weather
+        let todaysWeather={temp:weatherData.list[0].main.temp,wetherDesc:weatherData.list[0].weather[0].main,weatherIcon:weatherData.list[0].weather[0].icon},//gets the current weathefr
+         referncetimeUTC=weatherData.list[0].dt_txt,
+         forcastWeather=getTheWeatherForcast(referncetimeUTC,weatherData), //gets the forcasted weather 
+         finalWeatherData={todaysWeather:todaysWeather,forcastedWeatherCont:forcastWeather,city:weatherData.city.name};
+         setrequiredWeatherData( {...Utilities.deepCopy(finalWeatherData)} ) 
+    }
+ },[])
 
 
   useEffect(()=>{
     if((props.weatherDatas.city.name !==requiredWeatherData.city)){
       extractRequiredWeather(props.weatherDatas);
     }
-  },[props.weatherDatas.city.name]) 
+  },[props.weatherDatas.city.name,extractRequiredWeather,requiredWeatherData.city]) 
 
 
    const getTheWeatherForcast=(referncetimeUTC, weatherData) =>{
@@ -40,18 +50,6 @@ export default function WeatherWidget(props)  {
     return forcastWeather;
   }
 
-
-  function extractRequiredWeather(weatherData){
-    if(Object.keys(weatherData).length>0){ // iterating the weather date to get the current and forcasted weather
-        let todaysWeather={temp:weatherData.list[0].main.temp,wetherDesc:weatherData.list[0].weather[0].main,weatherIcon:weatherData.list[0].weather[0].icon},//gets the current weathefr
-         referncetimeUTC=weatherData.list[0].dt_txt,
-         forcastWeather=getTheWeatherForcast(referncetimeUTC,weatherData), //gets the forcasted weather 
-         finalWeatherData={todaysWeather:todaysWeather,forcastedWeatherCont:forcastWeather,city:weatherData.city.name};
-         setrequiredWeatherData( {...Utilities.deepCopy(finalWeatherData)} ) 
-    }
- }
- 
- 
     return (
      
       <section className="weather_card">

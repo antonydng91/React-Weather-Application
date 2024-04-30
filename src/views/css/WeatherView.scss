@@ -28,7 +28,7 @@
     background-color: $viewPortBackground;
     border:$appBorder;
     @media (min-width : 768px) {
-      width: 60%;
+      width: 90%;
     }
     
  }
@@ -119,7 +119,7 @@
       margin:0 auto;
       width: 100%;
       @media (min-width : 769px) {
-        width: 60%;
+        width: 90%;
       
       }
       border: 3px solid white;
